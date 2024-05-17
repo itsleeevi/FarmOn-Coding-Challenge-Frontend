@@ -12,7 +12,9 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ parcelId }) => {
   const { parcelData, error, loading } = useParcelData(parcelId);
-  const accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+  const accessToken =
+    process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN ||
+    "pk.eyJ1IjoibGVlZXZpIiwiYSI6ImNsdzk0Z292eTJhN24ya3BkeHRucWluZXYifQ.ybewJ1BZ5OxdyUw9Xn8Iqw"; // Default test token if env var is not set
 
   if (loading) {
     return (

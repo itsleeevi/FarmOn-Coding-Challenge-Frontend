@@ -26,7 +26,10 @@ const ParcelMap: React.FC<ParcelMapProps> = ({
   accessToken,
   coordinates,
 }) => {
-  const mapStyleUrl = `https://api.maptiler.com/maps/c03b9c3a-2608-48b4-b8b8-29d30f03ee55/style.json?key=${process.env.NEXT_PUBLIC_MAPTILER_KEY}`;
+  const mapStyleUrl = `https://api.maptiler.com/maps/c03b9c3a-2608-48b4-b8b8-29d30f03ee55/style.json?key=${
+    process.env.NEXT_PUBLIC_MAPTILER_KEY ||
+    "pk.eyJ1IjoibGVlZXZpIiwiYSI6ImNsdzk0Z292eTJhN24ya3BkeHRucWluZXYifQ.ybewJ1BZ5OxdyUw9Xn8Iqw" // Default test token if env var is not set
+  }`;
 
   // Defining a geoJson FeatureCollection object that matches the map component's type
   const geoJson: FeatureCollection = {
