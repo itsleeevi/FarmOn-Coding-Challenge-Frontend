@@ -17,11 +17,7 @@ const Main: React.FC<MainProps> = ({ parcelId }) => {
     "pk.eyJ1IjoibGVlZXZpIiwiYSI6ImNsdzk0Z292eTJhN24ya3BkeHRucWluZXYifQ.ybewJ1BZ5OxdyUw9Xn8Iqw"; // Default test token if env var is not set
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <Spinner />
-      </div>
-    );
+    return <Spinner />;
   }
 
   if (error) {

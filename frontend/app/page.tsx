@@ -14,24 +14,14 @@ const SearchParcel = () => {
   const parcelId = parcelIdParam ? parseInt(parcelIdParam, 10) : 1;
 
   if (parcelId === null) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <Spinner />
-      </div>
-    );
+    return <Spinner />;
   }
   return <Main parcelId={parcelId} />;
 };
 
 const Home: React.FC = () => {
   return (
-    <Suspense
-      fallback={
-        <div className="flex items-center justify-center min-h-screen">
-          <Spinner />
-        </div>
-      }
-    >
+    <Suspense fallback={<Spinner />}>
       <SearchParcel />
     </Suspense>
   );
