@@ -3,29 +3,32 @@ import { Segment, ParcelDailyData } from "@/types/types";
 
 export const parseDate = timeParse("%Y-%m-%d");
 export const formatDate = timeFormat("%Y");
- 
-export const calculateDaysInSegment = (startDate: Date, endDate: Date): number => {
-    const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
-    return Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
-  };
- 
+
+export const calculateDaysInSegment = (
+  startDate: Date,
+  endDate: Date
+): number => {
+  const diffTime = Math.abs(endDate.getTime() - startDate.getTime());
+  return Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+};
+
 export const getColor = (crop: string | undefined) => {
-    switch (crop) {
-      case "Rice":
-        return "url(#rice-pattern)";
-      case "Grass":
-        return "url(#grass-pattern)";
-      case "Cover Crop":
-        return "url(#cover-crop-pattern)";
-      case "Winter":
-        return "url(#winter-pattern)";
-      default:
-        return "#121212"; // Bare 
-    }
-  };
+  switch (crop) {
+    case "Rice":
+      return "url(#rice-pattern)";
+    case "Grass":
+      return "url(#grass-pattern)";
+    case "Cover Crop":
+      return "url(#cover-crop-pattern)";
+    case "Winter":
+      return "url(#winter-pattern)";
+    default:
+      return "#121212"; // Bare
+  }
+};
 
 // Groups parcel's daily data by year
-export  const groupDataByYear = (data: ParcelDailyData[]): Segment[] => {
+export const groupDataByYear = (data: ParcelDailyData[]): Segment[] => {
   const segments: Segment[] = [];
   let currentSegment: Segment | null = null;
 
@@ -95,7 +98,7 @@ export const groupDataByCoverage = (data: ParcelDailyData[]): Segment[] => {
 };
 
 // Groups parcel's daily data by winter season (December, January, February)
-export  const groupDataByWinter = (data: ParcelDailyData[]): Segment[] => {
+export const groupDataByWinter = (data: ParcelDailyData[]): Segment[] => {
   const segments: Segment[] = [];
   let currentSegment: Segment | null = null;
 
@@ -128,4 +131,3 @@ export  const groupDataByWinter = (data: ParcelDailyData[]): Segment[] => {
 
   return segments;
 };
-

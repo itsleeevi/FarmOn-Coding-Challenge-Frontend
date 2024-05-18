@@ -16,11 +16,13 @@
       {
         "name": "next"
       }
-    ],
+    ],"types": ["cypress"],
     "paths": {
       "@/*": ["./*"]
     }, 
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts",
+  "src/**/*.ts",
+ "cypress/**/*.ts","cypress/**/*.ts", "cypress/tsconfig.json", "cypress.config.js"],
   "exclude": ["node_modules"]
 }
