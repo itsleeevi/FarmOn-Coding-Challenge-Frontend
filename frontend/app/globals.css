@@ -31,3 +31,25 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Custom scrollbar styles for Chrome */
+.scrollbar-dark::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.scrollbar-dark::-webkit-scrollbar-track {
+  background: #101010; /* Dark background for the track */
+}
+
+.scrollbar-dark::-webkit-scrollbar-thumb {
+  background-color: #333; /* Darker color for the thumb */
+  border-radius: 10px;
+  border: 2px solid #101010; /* Matches the track background */
+}
+
+/* Firefox scrollbar styles */
+.scrollbar-dark {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #101010;
+}

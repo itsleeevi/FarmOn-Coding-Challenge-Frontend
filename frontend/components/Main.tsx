@@ -90,7 +90,7 @@ const Main: React.FC<MainProps> = ({ parcelId }) => {
             <h1 className="text-xl font-black">History</h1>
             <ParcelHistoryLegend />
           </div>
-          <div className="overflow-x-auto pb-2">
+          <div className="overflow-x-auto pb-2 scrollbar-dark">
             <ParcelHistory
               width={1200}
               height={150}
